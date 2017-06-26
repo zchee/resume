@@ -1,32 +1,63 @@
 # Projects
 
-## [docker-machine-driver-xhyve](https://github.com/zchee/docker-machine-driver-xhyve)
+## [docker-machine-driver-xhyve](https://github.com/zchee/docker-machine-driver-xhyve) (Go)
 
 docker-machine/minikube driver plugin for xhyve/hyperkit. (native macOS hypervisor.framework)
 
-[nathanleclaire/docker-machine-xhyve#2](https://github.com/nathanleclaire/docker-machine-xhyve/issues/2)
+macOSのHypervisor.framework(GUN/Linuxでのkvmに近いもの)を使った [mist64/xhyve](https://github.com/mist64/xhyve) をcgoでラップし、docker-machineのプラグインとして動くもの。  
+[kubernetes/minikube](https://github.com/kubernetes/minikube)からの打診もあり、minikubeのバックエンドもサポート。
+内部構造は後にリリースされたDocker for Macとほぼ同じ。(クローズドソースのため、個人的なバイナリ解析の結果)  
+現在はGoogleの@dlorenc、@r2d4(共にminikube)、Red Hatの@praveenkumar、Shopifyの@dalehamelと保守。
 
-## [nvim-go](https://github.com/zchee/nvim-go)
+## [nvim-go](https://github.com/zchee/nvim-go) (Go)
 
 Go development plugin for Neovim written in pure Go.
 
-## [clang-server](https://github.com/zchee/clang-server)
+VimのGo開発プラグインである[fatih/vim-go](https://github.com/fatih/vim-go)を、Neovim専用に書き直したもの。  
+NeovimのMsgpack-RPCプラグイン機構を使用して、Vim scriptではなくGoで記述。  
+vim-goとの完全互換を目指し、またオリジナルにはない[derekparker/delve](https://github.com/derekparker/delve)のGUIインターフェイスを実装しつつ開発中。
+
+## [clang-server](https://github.com/zchee/clang-server) (Go)
 
 A C/C++ AST index server using libclang written in Go.
 
-## [go-qcow2](https://github.com/zchee/go-qcow2)
+LLVM libclangのGoバインディングである[go-clang](https://github.com/go-clang)を使い、
+
+- C/C++のソースコードからASTを解析
+- flatbuffersで全構造体をシリアライズ
+- NoSQLであるLevelDBに保存
+- Msgpack-RPCまたはgRPCでクライアントと通信
+
+を経て、コード補完や各種コード解析(definition等)を提供するGoで記述したRPCサーバー。  
+現在はflatbuffersのgRPCサポートにPythonが入っていないため、一時開発中断。
+
+## [go-qcow2](https://github.com/zchee/go-qcow2) (Go)
 
 Manage the QEMU qcow2 disk image written in Go.
 
-## [go-mmal](https://github.com/zchee/go-mmal)
+QEMUのディスクイメージであるqcow2フォーマットを、仕様書に沿った形でバイナリレベルで構築するもの。  
+現在はファイル作成・書き込みのみサポート。  
+[docker-machine-driver-xhyve](https://github.com/zchee/docker-machine-driver-xhyve) の内部で使用している [moby/hyperkit](https://github.com/moby/hyperkit) がqcow2形式をサポートしているため、cgoでのバインディング・GPLライセンスを避けるために開発。
+
+## [go-mmal](https://github.com/zchee/go-mmal) (Go)
 
 Raspberry Pi's libmmal bindings for Go.
 
-## deoplete.nvim sources
+Raspberry Pi独自のMulti-Media Abstraction Layer (MMAL) を扱うためのGoのcgoバインディング。  
+Goのみでカメラを操作可能。
+
+## deoplete.nvim sources (Python)
+
+Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) の言語別プラグイン。  
+主にDocker社のVimユーザーのプロダクション環境で使用して頂いている。
 
 - [deoplete-go](https://github.com/zchee/deoplete-go)
+  - [nsf/gocode](https://github.com/nsf/gocode) を使用し提供
 - [deoplete-jedi](https://github.com/zchee/deoplete-jedi)
+  - Pythonの解析エンジンで有名なjediを使用しつつ、高速化のため内部でthreadingを使いサーバーを起動し補完を提供
 - [deoplete-clang](https://github.com/zchee/deoplete-clang)
+  - libclangのPythonバインディングを使用し、C/C++を解析し補完を提供
+  - 当時はLLVMでPython3のサポートが無かった為、libclang-python3としてポートし開発。
 
 ---
 
@@ -45,7 +76,7 @@ Raspberry Pi's libmmal bindings for Go.
   - First contribution: : 2015-03-02
 - [docs: Update each drivers flag](https://github.com/docker/machine/issues/1167)
 - [(closed) New Driver: xhyve](https://github.com/docker/machine/issues/1358)
-  - Move to [docker-machine-driver-xhyve](#docker-machine-driver-xhyve)
+  - Move to [docker-machine-driver-xhyve](#docker-machine-driver-xhyve-go)
 - [etc...](https://github.com/docker/machine/pulls?q=is%3Apr+is%3Aclosed+author%3Azchee)
 
 ## [nsf/gocode](https://github.com/nsf/gocode)
