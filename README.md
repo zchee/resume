@@ -7,7 +7,7 @@ docker-machine/minikube driver plugin for xhyve/hyperkit. (native macOS hypervis
 macOSのHypervisor.framework(GUN/Linuxでのkvmに近いもの)を使った [mist64/xhyve](https://github.com/mist64/xhyve) をcgoでラップし、docker-machineのプラグインとして動くもの。  
 [kubernetes/minikube](https://github.com/kubernetes/minikube)からの打診もあり、minikubeのバックエンドもサポート。
 内部構造は後にリリースされたDocker for Macとほぼ同じ。(クローズドソースのため、個人的なバイナリ解析の結果)  
-現在はGoogleの@dlorenc、@r2d4(共にminikube)、Red Hatの@praveenkumar、Shopifyの@dalehamelと保守。
+現在はGoogleの[@dlorenc](https://github.com/dlorenc)、[@r2d4](https://github.com/r2d4) (共にminikube)、Red Hatの[@praveenkumar](https://github.com/praveenkumar)、Shopifyの[@dalehamel](https://github.com/dalehamel)と保守。
 
 ## [nvim-go](https://github.com/zchee/nvim-go) (Go)
 
