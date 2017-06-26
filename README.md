@@ -75,10 +75,10 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 
 ## Go core, etc
 
-### Go
+### Go core
 - [build: fix darwin/arm broken on macOS 10.12 with Xcode 8.0](https://go-review.googlesource.com/c/34673/)
 
-### golang/org/x/tools
+### golang.org/x/tools
 - [go/gcexportdata: fix unnecessary plural type definitions of arg](https://go-review.googlesource.com/c/42890/)
 - [imports: fix LocalPrefix document prefix](https://go-review.googlesource.com/c/46432/)
 - [cmd/git-contrib-init: support http.cookiefile config for gitcookies](https://go-review.googlesource.com/c/46235/)
