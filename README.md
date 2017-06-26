@@ -75,6 +75,8 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 
 ## Go core, etc
 
+軽微な修正・iOS用のApple LLVM clangのビルドフラッグの追加など。
+
 ### Go core
 - [build: fix darwin/arm broken on macOS 10.12 with Xcode 8.0](https://go-review.googlesource.com/c/34673/)
 
