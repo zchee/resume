@@ -18,7 +18,7 @@ Go development plugin for Neovim written in pure Go.
 
 VimのGo開発プラグインである[fatih/vim-go](https://github.com/fatih/vim-go)を、Neovim専用に書き直したもの。  
 NeovimのMsgpack-RPCプラグイン機構を使用して、Vim scriptではなくGoで記述。  
-vim-goとの完全互換を目指し、またオリジナルにはない[derekparker/delve](https://github.com/derekparker/delve)のGUIインターフェイスを実装しつつ開発中。
+vim-goとの完全互換を目指し、またオリジナルにはない[derekparker/delve](https://github.com/derekparker/delve)のTUIインターフェイスを実装しつつ開発中。
 
 ## [clang-server](https://github.com/zchee/clang-server) (Go)
 
