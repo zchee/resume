@@ -122,14 +122,6 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 - [kexec: fix wrong calculation method of ramdisk_start](https://github.com/moby/hyperkit/issues/66)
   - backport to [mist64/xhyve#119 (open)](https://github.com/mist64/xhyve/issues/119)
 
-## [gperftools/gperftools](https://github.com/gperftools/gperftools)
-
-macOS Sierraにおけるシステムライブラリlibsystem_malloc.dylibの仕様変更で動作しない問題をレポート、修正パッチを投稿。  
-[jemalloc/jemalloc](https://github.com/jemalloc/jemalloc) で既に修正済みであったものをポート。
-
-- [*** malloc_zone_unregister() failed on macOS 10.12 Sierra](https://github.com/gperftools/gperftools/issues/827) (issue)
-  - [Fix finding default zone on macOS sierra](https://github.com/gperftools/gperftools/commit/acac6af26b0ef052b39f61a59507b23e9703bdfa) (commit)
-
 ## [boot2docker/boot2docker](https://github.com/boot2docker/boot2docker)
 
 [docker-machine-driver-xhyve](https://github.com/zchee/docker-machine-driver-xhyve) で使用している9pプロトコルサポートのkernel configの追加。
@@ -141,6 +133,22 @@ macOS Sierraにおけるシステムライブラリlibsystem_malloc.dylibの仕�
 [docker-machine-driver-xhyve](https://github.com/zchee/docker-machine-driver-xhyve) で使用している9pプロトコルサポートのkernel configの追加。
 
 - [xhyve/virtio-blk: enable virtio-blk block devices driver for xhyve](https://github.com/coreos/minikube-iso/issues/28)
+
+## [gperftools/gperftools](https://github.com/gperftools/gperftools)
+
+macOS Sierraにおけるシステムライブラリlibsystem_malloc.dylibの仕様変更で動作しない問題をレポート、修正パッチを投稿。  
+[jemalloc/jemalloc](https://github.com/jemalloc/jemalloc) で既に修正済みであったものをポート。
+
+- [*** malloc_zone_unregister() failed on macOS 10.12 Sierra](https://github.com/gperftools/gperftools/issues/827) (issue)
+  - [Fix finding default zone on macOS sierra](https://github.com/gperftools/gperftools/commit/acac6af26b0ef052b39f61a59507b23e9703bdfa) (commit)
+
+## [tmux/tmux](https://github.com/tmux/tmux)
+
+tmuxへの [@choppsv1氏の非公式パッチ](https://gist.github.com/choppsv1/dd00858d4f7f356ce2cf) にてTrue(24bit) color サポートが可能になったが、その後のtmuxの変更でapplyできなくなった為、[最新に追従するように変更したパッチ](https://gist.github.com/zchee/9f6f2ca17acf49e04088)を作成。  
+以下の[@sunaku](https://github.com/sunaku) 氏のpull requestのベースとなり、その後tmux本体に正式にマージされる。
+
+- [add support for 24-bit RGB color escape sequences](https://github.com/tmux/tmux/pull/112)
+
 
 ## Miscellaneous
 
