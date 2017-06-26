@@ -88,14 +88,22 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 
 ## [docker/machine](https://github.com/docker/machine)
 
-主にAmazon EC2/GCPドライバへのオプション追加・ドキュメント整備など。
+主にAmazon EC2/GCPドライバへのオプション追加・ドキュメント整備など。  
+[Support --google-disk-type flag for google driver / 2015-03-02](https://github.com/docker/machine/issues/687) が初のGoでのcontribution.
 
 - [Support --google-disk-type flag for google driver](https://github.com/docker/machine/issues/687)
-  - First contribution: : 2015-03-02
+- [Update GCE imageName to v20150316](https://github.com/docker/machine/pull/1067)
+- [Update AMI to release 20150417](https://github.com/docker/machine/pull/1085)
+- [Add Monitoring flag](https://github.com/docker/machine/pull/1086)
 - [docs: Update each drivers flag](https://github.com/docker/machine/issues/1167)
+- [Update AMI to release 20150603](https://github.com/docker/machine/pull/1222)
 - [(closed) New Driver: xhyve](https://github.com/docker/machine/issues/1358)
   - Move to [docker-machine-driver-xhyve](#docker-machine-driver-xhyve-go)
-- [etc...](https://github.com/docker/machine/pulls?q=is%3Apr+is%3Aclosed+author%3Azchee)
+- [Add xhyve driver](https://github.com/docker/machine/pull/2381)
+- [Rename xhyve driver](https://github.com/docker/machine/pull/2477)
+- [Fix docker daemon flag on systemd](https://github.com/docker/machine/pull/2844)
+- [Fix docker daemon flag on redhat](https://github.com/docker/machine/pull/2850)
+- [Fix typo](https://github.com/docker/machine/pull/2900)
 
 ## [nsf/gocode](https://github.com/nsf/gocode)
 
@@ -188,3 +196,5 @@ tmuxへの [@choppsv1氏の非公式パッチ](https://gist.github.com/choppsv1/
   - [nvim: change get_api_info to new 'nvim_' suffix API](https://github.com/neovim/go-client/issues/12)
 - [mercari/gaurun](https://github.com/mercari/gaurun)
   - [gcm: rename Client method receiver to c](https://github.com/mercari/gaurun/issues/67)
+
+- [etc...](https://github.com/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Azchee)
