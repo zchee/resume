@@ -8,7 +8,7 @@ macOSのHypervisor.framework(GUN/Linuxでのkvmに近いもの)を使った [mis
 [kubernetes/minikube](https://github.com/kubernetes/minikube)からの打診もあり、minikubeのバックエンドもサポートし現在もオプションとして使用可能。  
 
 vmnet.frameworkでのnetシェア、qcow2フォーマットのサポート、9p(plan9)プロトコル上のHost/Guest間のフォルダシェアなど。  
-内部構造は後にリリースされたDocker for Macとほぼ同じ。(クローズドソースのため、個人的なバイナリ解析の結果)
+基本内部構造は後にリリースされたDocker for Macとほぼ同じ。(クローズドソースのため、個人的なバイナリ解析の結果)
 
 現在はGoogleの[@dlorenc](https://github.com/dlorenc)、[@r2d4](https://github.com/r2d4) (共にminikube)、Red Hatの[@praveenkumar](https://github.com/praveenkumar)、Shopifyの[@dalehamel](https://github.com/dalehamel)と保守。
 
@@ -27,12 +27,12 @@ A C/C++ AST index server using libclang written in Go.
 LLVM libclangのGoバインディングである[go-clang](https://github.com/go-clang)を使い、
 
 - C/C++のソースコードからASTを解析
-- flatbuffersで全構造体をシリアライズ
-- NoSQLであるLevelDBに保存
+- [flatbuffers](https://github.com/google/flatbuffers)で全構造体をシリアライズ
+- NoSQLであるLevelDBに保存 ([syndtr/goleveldb](https://github.com/syndtr/goleveldb))
 - Msgpack-RPCまたはgRPCでクライアントと通信
 
 を経て、コード補完や各種コード解析(definition等)を提供するGoで記述したRPCサーバー。  
-現在はflatbuffersのgRPCサポートにPythonが入っていないため、一時開発中断。
+現在は [flatbuffers](https://github.com/google/flatbuffers) のgRPCサポートにPythonが入っていないため、一時開発中断。
 
 ## [go-qcow2](https://github.com/zchee/go-qcow2) (Go)
 
