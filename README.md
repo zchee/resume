@@ -144,7 +144,7 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 
 ## [gperftools/gperftools](https://github.com/gperftools/gperftools)
 
-macOS Sierraにおけるシステムライブラリlibsystem_malloc.dylibの仕様変更で動作しない問題をレポート、修正パッチを投稿。  
+gperftools内のTC Mallocにて、macOS Sierraのシステムライブラリlibsystem_malloc.dylibの仕様変更で動作しない問題をレポート、修正パッチを投稿。  
 [jemalloc/jemalloc](https://github.com/jemalloc/jemalloc) で既に修正済みであったものをポート。
 
 - [*** malloc_zone_unregister() failed on macOS 10.12 Sierra](https://github.com/gperftools/gperftools/issues/827) (issue)
