@@ -7,6 +7,9 @@ docker-machine/minikube driver plugin for xhyve/hyperkit. (native macOS hypervis
 macOSのHypervisor.framework(GUN/Linuxでのkvmに近いもの)を使った [mist64/xhyve](https://github.com/mist64/xhyve) をcgoでラップし、docker-machineのプラグインとして動くもの。  
 [kubernetes/minikube](https://github.com/kubernetes/minikube)からの打診もあり、minikubeのバックエンドもサポート。  
 内部構造は後にリリースされたDocker for Macとほぼ同じ。(クローズドソースのため、個人的なバイナリ解析の結果)  
+
+qcow2ファイルのサポート、9p(plan9)プロトコル上のhost/guest間のフォルダシェアなど。
+
 現在はGoogleの[@dlorenc](https://github.com/dlorenc)、[@r2d4](https://github.com/r2d4) (共にminikube)、Red Hatの[@praveenkumar](https://github.com/praveenkumar)、Shopifyの[@dalehamel](https://github.com/dalehamel)と保守。
 
 ## [nvim-go](https://github.com/zchee/nvim-go) (Go)
@@ -72,6 +75,8 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 
 ## [docker/machine](https://github.com/docker/machine)
 
+主にAmazon EC2/GCPドライバへのオプション追加・ドキュメント整備など。
+
 - [Support --google-disk-type flag for google driver](https://github.com/docker/machine/issues/687)
   - First contribution: : 2015-03-02
 - [docs: Update each drivers flag](https://github.com/docker/machine/issues/1167)
@@ -80,6 +85,8 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 - [etc...](https://github.com/docker/machine/pulls?q=is%3Apr+is%3Aclosed+author%3Azchee)
 
 ## [nsf/gocode](https://github.com/nsf/gocode)
+
+主にGoのtipでの言語仕様・バイナリ仕様の変更に追従するためのパーサーの修正。
 
 - [package_bin: Fix callback arg to package path instead of alias name](https://github.com/nsf/gocode/issues/357)
 - [package_bin: Add bimport v1. backport https://golang.org/cl/24648/](https://github.com/nsf/gocode/issues/360)
@@ -95,18 +102,32 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 - [package_bin: backport interface embedding support](https://github.com/nsf/gocode/issues/441)
 - [package_bin: improve efficiency of binary export position encoding](https://github.com/nsf/gocode/issues/451)
 
+## [moby/hyperkit](https://github.com/moby/hyperkit)
+
+ハイパーバイザー起動時のkernelとinitrdファイルのロードにて、メモリ上で双方がオーバーラップする為にdebian testingやminikubeのカーネルが動作しない問題を修正。
+
+- [kexec: fix wrong calculation method of ramdisk_start](https://github.com/moby/hyperkit/issues/66)
+  - backport to [mist64/xhyve#119 (open)](https://github.com/mist64/xhyve/issues/119)
+
+## [gperftools/gperftools](https://github.com/gperftools/gperftools)
+
+macOS Sierraにおけるシステムライブラリlibsystem_malloc.dylibの仕様変更で動作しない問題をレポート、修正パッチを投稿。  
+[jemalloc/jemalloc](https://github.com/jemalloc/jemalloc) で既に修正済みであったものをポート。
+
+- [*** malloc_zone_unregister() failed on macOS 10.12 Sierra](https://github.com/gperftools/gperftools/issues/827) (issue)
+  - [Fix finding default zone on macOS sierra](https://github.com/gperftools/gperftools/commit/acac6af26b0ef052b39f61a59507b23e9703bdfa) (commit)
+
 ## [boot2docker/boot2docker](https://github.com/boot2docker/boot2docker)
+
+[docker-machine-driver-xhyve](https://github.com/zchee/docker-machine-driver-xhyve) で使用している9pプロトコルサポートのkernel configの追加。
 
 - [Add support virtio-9p](https://github.com/boot2docker/boot2docker/issues/1139) 
 
 ## [coreos/minikube-iso](https://github.com/coreos/minikube-iso)
 
+[docker-machine-driver-xhyve](https://github.com/zchee/docker-machine-driver-xhyve) で使用している9pプロトコルサポートのkernel configの追加。
+
 - [xhyve/virtio-blk: enable virtio-blk block devices driver for xhyve](https://github.com/coreos/minikube-iso/issues/28)
-
-## [moby/hyperkit](https://github.com/moby/hyperkit)
-
-- [kexec: fix wrong calculation method of ramdisk_start](https://github.com/moby/hyperkit/issues/66)
-  - backport to [mist64/xhyve#119 (open)](https://github.com/mist64/xhyve/issues/119)
 
 ## Miscellaneous
 
