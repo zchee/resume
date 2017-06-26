@@ -73,6 +73,19 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 
 # Contributions
 
+## Go core, etc
+
+### Go
+- [build: fix darwin/arm broken on macOS 10.12 with Xcode 8.0](https://go-review.googlesource.com/c/34673/)
+
+### golang/org/x/tools
+- [go/gcexportdata: fix unnecessary plural type definitions of arg](https://go-review.googlesource.com/c/42890/)
+- [imports: fix LocalPrefix document prefix](https://go-review.googlesource.com/c/46432/)
+- [cmd/git-contrib-init: support http.cookiefile config for gitcookies](https://go-review.googlesource.com/c/46235/)
+- [cmd/go-contrib-init: fix get GOPATH env logic](https://go-review.googlesource.com/c/46234/)
+- [cover: backport handle multiple samples from the same location](https://go-review.googlesource.com/c/37550/)
+- [cmd/guru: fix typo of 'hyphen' to rename to 'comma'](https://go-review.googlesource.com/c/35770/)
+
 ## [docker/machine](https://github.com/docker/machine)
 
 主にAmazon EC2/GCPドライバへのオプション追加・ドキュメント整備など。
