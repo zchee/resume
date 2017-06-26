@@ -91,7 +91,7 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 ## [docker/machine](https://github.com/docker/machine)
 
 主にAmazon EC2/GCPドライバへのオプション追加・ドキュメント整備など。  
-[Support --google-disk-type flag for google driver](https://github.com/docker/machine/issues/687)(2015-03-02) が初のGoでのcontribution.
+[Support --google-disk-type flag for google driver](https://github.com/docker/machine/issues/687)(2015-03-02) がGoでの初のcontribution.
 
 - [Support --google-disk-type flag for google driver](https://github.com/docker/machine/issues/687)
 - [Update GCE imageName to v20150316](https://github.com/docker/machine/pull/1067)
