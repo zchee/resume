@@ -2,6 +2,8 @@
 
 ## [docker-machine-driver-xhyve](https://github.com/zchee/docker-machine-driver-xhyve) (Go)
 
+[![GitHub stars](https://img.shields.io/github/stars/zchee/docker-machine-driver-xhyve.svg?style=social&label=Star)]()
+
 docker-machine/minikube driver plugin for xhyve/hyperkit. (native macOS hypervisor.framework)
 
 macOSのHypervisor.framework(GUN/Linuxでのkvmに近いもの)を使った [mist64/xhyve](https://github.com/mist64/xhyve) をcgoでラップし、docker-machineのプラグインとして動くもの。現在は [moby/hyperkit](https://github.com/moby/hyperkit) を使用。  
@@ -14,6 +16,8 @@ vmnet.frameworkでのnetシェア、qcow2フォーマットのサポート、vir
 
 ## [nvim-go](https://github.com/zchee/nvim-go) (Go)
 
+[![GitHub stars](https://img.shields.io/github/stars/zchee/nvim-go.svg?style=social&label=Star)]()
+
 Go development plugin for Neovim written in pure Go.
 
 VimのGo開発プラグインである[fatih/vim-go](https://github.com/fatih/vim-go)を、Neovim専用に書き直したもの。  
@@ -21,6 +25,8 @@ NeovimのMsgpack-RPCプラグイン機構を使用して、Vim scriptではな�
 vim-goとの完全互換を目指し、またオリジナルにはない[derekparker/delve](https://github.com/derekparker/delve)のTUIインターフェイスを実装しつつ開発中。
 
 ## [clang-server](https://github.com/zchee/clang-server) (Go)
+
+[![GitHub stars](https://img.shields.io/github/stars/zchee/clang-server.svg?style=social&label=Star)]()
 
 A C/C++ AST index server using libclang written in Go.
 
@@ -36,6 +42,8 @@ LLVM libclangのGoバインディングである[go-clang](https://github.com/go
 
 ## [go-qcow2](https://github.com/zchee/go-qcow2) (Go)
 
+[![GitHub stars](https://img.shields.io/github/stars/zchee/go-qcow2.svg?style=social&label=Star)]()
+
 Manage the QEMU qcow2 disk image written in Go.
 
 QEMUのディスクイメージであるqcow2フォーマットを、仕様書に沿った形でバイナリレベルで構築するもの。  
@@ -43,6 +51,8 @@ QEMUのディスクイメージであるqcow2フォーマットを、仕様書�
 [docker-machine-driver-xhyve](https://github.com/zchee/docker-machine-driver-xhyve) の内部で使用している [moby/hyperkit](https://github.com/moby/hyperkit) がqcow2形式をサポートしているため、cgoでのバインディング・GPLライセンスを避けるために開発。
 
 ## [go-mmal](https://github.com/zchee/go-mmal) (Go)
+
+[![GitHub stars](https://img.shields.io/github/stars/zchee/go-mmal.svg?style=social&label=Star)]()
 
 Raspberry Pi's libmmal bindings for Go.
 
@@ -55,10 +65,13 @@ Neovimの補完エンジンである [Shougo/deoplete.nvim](https://github.com/S
 主にDocker社のVimユーザーのプロダクション環境で使用して頂いている。
 
 - [deoplete-go](https://github.com/zchee/deoplete-go)
+  - [![GitHub stars](https://img.shields.io/github/stars/zchee/deoplete-go.svg?style=social&label=Star)]()
   - [nsf/gocode](https://github.com/nsf/gocode) を使用し提供
 - [deoplete-jedi](https://github.com/zchee/deoplete-jedi)
+  - [![GitHub stars](https://img.shields.io/github/stars/zchee/deoplete-jedi.svg?style=social&label=Star)]()
   - Pythonの解析エンジンで有名なjediを使用しつつ、高速化のため内部でthreadingを使いサーバーを起動し補完を提供
 - [deoplete-clang](https://github.com/zchee/deoplete-clang)
+  - [![GitHub stars](https://img.shields.io/github/stars/zchee/deoplete-clang.svg?style=social&label=Star)]()
   - libclangのPythonバインディングを使用し、C/C++を解析し補完を提供
   - 当時はLLVMでPython3のサポートが無かった為、libclang-python3としてポートし開発。
 
